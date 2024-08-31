@@ -1,0 +1,249 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+.section {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-style: normal;
+    color: #2e2f42;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1752px;
+    padding: 36px 156px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.form-input {
+    width: 272px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #808080;
+    padding: 16px 8px;
+    outline: none;
+    color: #2e2f42;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #808080;
+}
+
+.form-input:hover {
+    border: 1px solid #000;
+}
+
+.form-input:focus {
+    border: 1px solid #4e75ff;
+}
+
+.form-btn {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    padding: 8px 16px;
+    min-width: 91px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #4e75ff;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-btn:hover {
+    background-color: #6c8cff;
+}
+
+.iziToast>.iziToast-close {
+    background-size: 16px;
+    opacity: 1;
+}
+
+.gallery-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: calc((100% - 48px) / 3);
+    border: 1px solid #808080;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover {
+    border: 1px solid #000;
+}
+
+.gallery-img {
+    height: 152px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 20px;
+    text-align: center;
+}
+
+.gallery-info-title {
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.loader-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.loader-box-active {
+    display: block;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px dotted #FFF;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px dotted #FF3D00;
+    border-style: solid solid dotted;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: rotationBack 1s linear infinite;
+    transform-origin: center center;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .gallery-item {
+        width: calc((100% - 24px) / 2);
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .gallery-info {
+        padding: 5px;
+    }
+}
+
+.load-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.load-more-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4e75ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 250ms ease;
+}
+
+.load-more-button:hover {
+    background-color: #6c8cff;
+}
+
+.end-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: red;
+    text-align: center;
+}

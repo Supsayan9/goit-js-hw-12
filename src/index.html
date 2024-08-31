@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Homework 11</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Welcome to this Gallery</h1>
+    <form class="form">
+      <input class="form-input" type="text" name="search" placeholder="Search images..." autofocus />
+      <button class="form-btn" type="submit">Search</button>
+    </form>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+    <ul class="gallery-list"></ul>
 
-    <load src="./partials/footer.html" />
+    <button id="load-more" class="load-more-button" style="display: none;">Load more</button>
+    <p id="end-message" class="end-message" style="display: none;">No more images to load.</p>
 
-    <script type="module" src="main.js"></script>
+    <div class="loader-box">
+      <span class="loader"></span>
+    </div>
+  </div>
+</section>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
