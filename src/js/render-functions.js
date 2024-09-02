@@ -28,3 +28,10 @@ export const createGalleryElement = galleryElementInfo => {
     </li>
   `;
 };
+
+
+export const renderGallery = items => {
+  const galleryList = document.querySelector('.gallery-list');
+  const galleryItems = items.map(createGalleryElement).join('');
+  galleryList.insertAdjacentHTML('beforeend', galleryItems);
+};
