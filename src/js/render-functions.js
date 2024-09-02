@@ -1,11 +1,11 @@
 export const createGalleryElement = galleryElementInfo => {
-    return `
+  return `
     <li class="gallery-item">
       <a class="gallery-link" href="${galleryElementInfo.largeImageURL}">
         <img class="gallery-img"
-        src="${galleryElementInfo.webformatURL}"
-        alt="${galleryElementInfo.tags}"
-        loading="lazy" />
+          src="${galleryElementInfo.webformatURL}"
+          alt="${galleryElementInfo.tags}"
+          loading="lazy" />
       </a>
       <ul class="gallery-info">
         <li class="gallery-info-item">
@@ -26,5 +26,5 @@ export const createGalleryElement = galleryElementInfo => {
         </li>
       </ul>
     </li>
-    `;
-  };
+  `;
+};

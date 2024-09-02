@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/styles.css" />
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700" rel="stylesheet" />
+  <!-- Підключаємо CSS файл -->
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-<section class="section">
-  <div class="container">
-    <h1 class="title">Welcome to this Gallery</h1>
-    <form class="form">
-      <input class="form-input" type="text" name="search" placeholder="Search images..." autofocus />
-      <button class="form-btn" type="submit">Search</button>
-    </form>
-
-    <ul class="gallery-list"></ul>
-
-    <button id="load-more" class="load-more-button" style="display: none;">Load more</button>
-    <p id="end-message" class="end-message" style="display: none;">No more images to load.</p>
-
-    <div class="loader-box">
-      <span class="loader"></span>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Welcome to this Gallery</h1>
+      <form class="form">
+        <input class="form-input" type="text" name="search" placeholder="Search images..." autofocus />
+        <button class="form-btn" type="submit">Search</button>
+      </form>
+      <ul class="gallery-list"></ul>
+      <button id="load-more" class="load-more-button" style="display: none;">Load more</button>
+      <p id="end-message" class="end-message" style="display: none;">No more images to load.</p>
+      <div class="loader-box">
+        <span class="loader"></span>
+      </div>
     </div>
-  </div>
-</section>
-
-    <script type="module" src="./main.js"></script>
-  </body>
+  </section>
+  <script type="module" src="./main.js"></script>
+</body>
 </html>

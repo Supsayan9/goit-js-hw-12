@@ -1,21 +1,41 @@
-const BASE_URL = 'https://pixabay.com/api/?';
+import axios from 'axios';
+import iziToast from 'izitoast';
 
-export const gethPhotos = (searchValue, page) => {
-  const options = new URLSearchParams({
-    key: '45539852-e7385dbf9677b23660ec365b6',
-    q: searchValue,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: true,
-    page: page,
-    per_page: 15
-  });
+const BASE_URL = 'https://pixabay.com/api/';
+const API_KEY = '45539852-e7385dbf9677b23660ec365b6';
 
-  return fetch(`${BASE_URL}${options}`).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
+export const getPhotos = async (searchValue, page) => {
+  try {
+    const response = await axios.get(BASE_URL, {
+      params: {
+        key: API_KEY,
+        q: searchValue,
+        image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: true,
+        page: page,
+        per_page: 15,
+      },
+    });
+
+    if (response.status !== 200) {
+      throw new Error(`Error: ${response.status}`);
     }
 
-    return response.json();
-  });
+    return response.data;
+  } catch (error) {
+    iziToast.show({
+      message: `Error: ${error.message}`,
+      position: 'topRight',
+      backgroundColor: '#ef4040',
+      titleColor: '#fff',
+      titleSize: '16px',
+      messageColor: '#fff',
+      messageSize: '16px',
+      maxWidth: '385px',
+      timeout: 5000,
+    });
+
+    throw error;
+  }
 };
